@@ -1645,8 +1645,8 @@ function rcmail_address_string($input, $max=null, $linked=false, $addicon=null, 
                 $address = html::a($attrs, $content);
             }
             else {
-                $address = html::span(array('title' => $mailto, 'class' => "rcmContactAddress"),
-                    rcube::Q($name ?: $mailto));
+                $address = html::span(array('title' => $name ? $name : $mailto, 'class' => "rcmContactAddress"),
+                    rcube::Q($mailto));
             }
 
             if ($addicon && $_SESSION['writeable_abook']) {
